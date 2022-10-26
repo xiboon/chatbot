@@ -28,7 +28,8 @@ export class Chatbot {
         this.searchClass = new Search(this);
         setInterval(() => {
             this.repeated = this.repeated.slice(0 - this.maxRepeated, -1);
-        }, 30000);
+            this.data.sort(Math.random);
+        }, 60000);
     }
     async reply(text: string) {
         const bestMatches = await this.searchClass.search(text);
